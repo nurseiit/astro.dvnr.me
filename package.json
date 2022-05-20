@@ -6,16 +6,23 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "format": "yarn prettier -w .",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@astrojs/preact": "^0.1.2",
     "@astrojs/sitemap": "^0.1.0",
     "astro": "^1.0.0-beta.31",
+    "husky": "^8.0.1",
+    "lint-staged": ">=10",
     "prettier": "^2.6.2",
     "prettier-plugin-astro": "^0.1.0-next.4"
   },
   "dependencies": {
     "preact": "^10.6.5"
+  },
+  "lint-staged": {
+    "*.{js,css,md,json,astro}": "prettier --write"
   }
 }
