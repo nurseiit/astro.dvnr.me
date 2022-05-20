@@ -8,22 +8,20 @@ const { post } = Astro.props;
 
 <article class='post-preview'>
   <header>
-    <p class='publish-date'>{post.frontmatter.publishDate}</p>
     <a href={post.url}><h1 class='title'>{post.frontmatter.title}</h1></a>
+    <p class='publish-date'>{post.frontmatter.publishDate}</p>
   </header>
-  <p>{post.frontmatter.description}</p>
-  <a href={post.url}>Read more</a>
+  <p>{'> '} {post.frontmatter.description}</p>
 </article>
 
-<style>
+<style lang='scss'>
   .content :global(main > * + *) {
     margin-top: 1rem;
   }
 
   .post-preview {
-    padding-bottom: 2rem;
-    margin-bottom: 2rem;
-    border-bottom: 4px solid var(--theme-divider);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
   }
 
   header {
@@ -31,25 +29,27 @@ const { post } = Astro.props;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-bottom: 2rem;
     text-align: left;
   }
 
   .title,
-  .author,
   .publish-date {
     margin: 0;
   }
 
-  .publish-date,
-  .author {
-    font-size: 1.25rem;
+  .publish-date {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
     color: var(--theme-text-lighter);
   }
 
   .title {
-    font-size: 2.25rem;
+    font-size: 1.9rem;
     font-weight: 700;
-    color: var(--theme-text);
+    color: var(--theme-heading);
+
+    &:hover {
+      color: inherit;
+    }
   }
 </style>

@@ -17,7 +17,8 @@
     "husky": "^8.0.1",
     "lint-staged": ">=10",
     "prettier": "^2.6.2",
-    "prettier-plugin-astro": "^0.1.0-next.4"
+    "prettier-plugin-astro": "^0.1.0-next.4",
+    "sass": "^1.52.0"
   },
   "dependencies": {
     "preact": "^10.6.5"
