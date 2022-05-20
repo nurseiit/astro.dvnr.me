@@ -23,6 +23,6 @@
     "preact": "^10.6.5"
   },
   "lint-staged": {
-    "*.{js,css,md,json,astro}": "prettier --write"
+    "*.{js,jsx,ts,tsx,css,md,json,astro}": "prettier --write"
   }
 }
