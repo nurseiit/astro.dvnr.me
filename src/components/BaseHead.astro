@@ -1,5 +1,5 @@
 ---
-import '../styles/blog.css';
+import '../styles/global.scss';
 
 export interface Props {
   title: string;
@@ -33,8 +33,9 @@ const { title, description, permalink } = Astro.props;
 <meta property='twitter:image' content='https://astro.build/social.png?v=1' />
 
 <!-- Fonts -->
-<link rel='preconnect' href='https://fonts.gstatic.com' />
+<link rel='preconnect' href='https://fonts.googleapis.com' />
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
 <link
+  href='https://fonts.googleapis.com/css2?family=Fira+Mono&family=Open+Sans:wght@400;700&display=swap'
   rel='stylesheet'
-  href='https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;700&display=swap'
 />

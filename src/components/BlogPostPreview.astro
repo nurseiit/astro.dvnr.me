@@ -15,10 +15,6 @@ const { post } = Astro.props;
 </article>
 
 <style lang='scss'>
-  .content :global(main > * + *) {
-    margin-top: 1rem;
-  }
-
   .post-preview {
     padding-bottom: 1rem;
     margin-bottom: 1rem;
@@ -46,7 +42,7 @@ const { post } = Astro.props;
   .title {
     font-size: 1.9rem;
     font-weight: 700;
-    color: var(--theme-heading);
+    color: var(--theme-title-color);
 
     &:hover {
       color: inherit;
