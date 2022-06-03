@@ -1,24 +1,49 @@
-<header class='wrapper'>
+---
+export interface Props {
+  showSubheader?: boolean;
+}
+const { showSubheader } = Astro.props;
+---
+
+<header>
   <article>
     <h1>
-      <a href='/'>
-        <span>
-          <pre>/dev/nur</pre>
-        </span>
-      </a>
+      <a href='/'> /dev/nur</a>
     </h1>
-    <p>
-      inspirations by{' '}
-      <a href='/about'>Nurseiit A.</a>
-    </p>
+    {typeof showSubheader === 'undefined' || showSubheader ? (
+      <p>
+        inspirations by <a href="/about">Nurseiit A.</a>
+      </p>
+    ) : null}
   </article>
+  <div>
+    <a class='navlink' href='/posts'>
+      <strong>blog</strong>
+    </a>
+    <a class='navlink' href='/about'>
+      <strong>about</strong>
+    </a>
+  </div>
 </header>
 
 <style lang='scss'>
   header {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1rem;
+    padding-bottom: 4rem;
+    margin-bottom: -3rem;
+
+    background-color: var(--theme-behind-color);
   }
+
   article {
     display: flex;
     flex-direction: column;
@@ -38,14 +63,19 @@
     padding: 0;
   }
 
-  h1 a {
+  a {
     color: var(--theme-heading-color);
+    font-family: var(--font-mono);
     text-decoration: none;
     display: inline-flex;
 
     &:hover {
-      color: var(--theme-hovered-links);
+      color: var(--theme-hovered-links-header);
       text-decoration: underline;
+    }
+
+    &.navlink {
+      padding-left: 1rem;
     }
   }
 

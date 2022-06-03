@@ -1,0 +1,48 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import BlogHeader from '../../components/BlogHeader.astro';
+import BlogPostPreview from '../../components/BlogPostPreview.astro';
+
+// TODO
+const title = '/dev/nur - blog';
+const description = 'The perfect blog.';
+const permalink = `https://${import.meta.env.VERCEL_URL}`;
+
+// Data Fetching: List all Markdown posts in the repo.
+let allPosts = await Astro.glob('./*.md');
+
+allPosts = allPosts.sort(
+  (a, b) =>
+    new Date(b.frontmatter.publishDate).valueOf() -
+    new Date(a.frontmatter.publishDate).valueOf()
+);
+---
+
+<html lang='en'>
+  <head>
+    <BaseHead {title} {description} {permalink} />
+
+    <style>
+      .wrapper {
+        background-color: var(--theme-background-color);
+        margin-top: 5.5rem;
+      }
+
+      .content {
+        margin-top: 1.5rem;
+        margin-bottom: 8rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <BlogHeader />
+    <div class='wrapper'>
+      <main class='content'>
+        <section aria-label='Blog post list'>
+          {allPosts.map((p) => <BlogPostPreview post={p} />)}
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

@@ -32,7 +32,7 @@
 
   --color-orange: #ee7769;
   --color-dark-orange: #ff9100;
-  --color-light-orange: #ffbe41;
+  --color-light-orange: #f7c476;
 
   --color-gray: #464849;
   --color-dark-gray: #3d3d3d;
@@ -51,11 +51,13 @@
 
   --theme-background-color: var(--color-white);
   --theme-accent-background: var(--color-lightest-gray);
+  --theme-behind-color: var(--color-light-orange);
 
   --theme-heading-color: var(--color-darkest-blue);
 
   --theme-links: var(--color-blue);
   --theme-hovered-links: var(--color-orange);
+  --theme-hovered-links-header: var(--color-lighter-blue);
 
   --theme-border-color: var(--color-black-twenty);
 
